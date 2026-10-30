@@ -1,0 +1,90 @@
+export const ROLES = {
+  USER: 'USER',
+  ADMIN: 'ADMIN',
+};
+
+export const USER_STATUS = {
+  ACTIVE: 'ACTIVE',
+  SUSPENDED: 'SUSPENDED',
+};
+
+export const MOVIE_STATUS = {
+  NOW_SHOWING: 'NOW_SHOWING',
+  UPCOMING: 'UPCOMING',
+  ARCHIVED: 'ARCHIVED',
+};
+
+export const CERTIFICATES = {
+  U: 'U',
+  UA: 'UA',
+  A: 'A',
+};
+
+export const FORMATS = {
+  TWO_D: '2D',
+  THREE_D: '3D',
+  IMAX: 'IMAX',
+};
+
+export const SEAT_CATEGORIES = {
+  REGULAR: 'REGULAR',
+  PREMIUM: 'PREMIUM',
+  RECLINER: 'RECLINER',
+};
+
+export const SEAT_STATUS = {
+  AVAILABLE: 'AVAILABLE',
+  HELD: 'HELD',
+  BOOKED: 'BOOKED',
+  BLOCKED: 'BLOCKED',
+};
+
+export const CELL_KIND = {
+  SEAT: 'SEAT',
+  AISLE: 'AISLE',
+  BLOCKED: 'BLOCKED',
+};
+
+export const SHOW_STATUS = {
+  SCHEDULED: 'SCHEDULED',
+  CANCELLED: 'CANCELLED',
+  COMPLETED: 'COMPLETED',
+};
+
+export const BOOKING_STATUS = {
+  AWAITING_PAYMENT: 'AWAITING_PAYMENT',
+  CONFIRMED: 'CONFIRMED',
+  CANCELLED: 'CANCELLED',
+  USED: 'USED',
+  EXPIRED: 'EXPIRED',
+};
+
+export const PAYMENT_STATUS = {
+  PENDING_PAYMENT: 'PENDING_PAYMENT',
+  SUCCESS: 'SUCCESS',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED',
+  PARTIALLY_REFUNDED: 'PARTIALLY_REFUNDED',
+};
+
+export const REFUND_STATUS = {
+  PENDING: 'PENDING',
+  PROCESSED: 'PROCESSED',
+  FAILED: 'FAILED',
+};
+
+export const COUPON_TYPE = {
+  PERCENT: 'PERCENT',
+  FLAT: 'FLAT',
+};
+
+export const AUDIT_ENTITIES = {
+  MOVIE: 'MOVIE',
+  THEATRE: 'THEATRE',
+  SCREEN: 'SCREEN',
+  SHOW: 'SHOW',
+  BOOKING: 'BOOKING',
+  USER: 'USER',
+  COUPON: 'COUPON',
+  SETTING: 'SETTING',
+};

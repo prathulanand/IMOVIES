@@ -1,0 +1,98 @@
+:root {
+  /* Color Palette - Gothic Aesthetic Velvet Dark Theme */
+  --bg-main: #07050a;          /* Deepest obsidian night */
+  --bg-surface: #0e0b16;       /* Midnight gothic purple */
+  --bg-card: #130f1e;          /* Dark velvet slate */
+  --bg-card-hover: #1c152d;    /* Rich nocturnal amethyst */
+  --bg-modal: #110d1c;         /* Translucent gothic glass */
+
+  /* Primary Brand Aesthetic Purple Accents */
+  --primary-color: #a855f7;    /* Luminous Electric Amethyst */
+  --primary-hover: #9333ea;    /* Deep Gothic Violet */
+  --primary-dark: #7e22ce;     /* Dark Velvet Violet */
+  --primary-light: #c084fc;    /* Soft Lilac glow */
+  --primary-glow: rgba(168, 85, 247, 0.4);
+  --primary-glow-strong: rgba(168, 85, 247, 0.65);
+  --primary-glow-subtle: rgba(168, 85, 247, 0.18);
+
+  --accent-gold: #f59e0b;
+  --accent-cyan: #c084fc;
+  --accent-purple: #a855f7;
+
+  /* Text Colors */
+  --text-main: #f5f3ff;
+  --text-muted: #a78bfa;
+  --text-dim: #71698e;
+
+  /* Borders & Dividers */
+  --border-subtle: #241d33;
+  --border-focus: #a855f7;
+  --border-glow: rgba(168, 85, 247, 0.35);
+
+  /* Seat Status Colors (Single Source of Truth in CSS) */
+  --seat-available-border: #3b2d56;
+  --seat-available-bg: #151122;
+  --seat-available-hover: #261b3d;
+
+  --seat-selected-bg: #a855f7;
+  --seat-selected-glow: rgba(168, 85, 247, 0.65);
+
+  --seat-held-bg: #f59e0b;
+  --seat-held-glow: rgba(245, 158, 11, 0.35);
+
+  --seat-booked-bg: #2d263b;
+  --seat-booked-opacity: 0.4;
+
+  --seat-blocked-bg: #14111c;
+  --seat-blocked-border: #211c2e;
+
+  /* Status Badges */
+  --status-success: #a855f7;
+  --status-warning: #f59e0b;
+  --status-danger: #ef4444;
+  --status-info: #c084fc;
+
+  /* Typography */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-heading: 'Outfit', sans-serif;
+
+  /* Shadows & Glassmorphism */
+  --glass-bg: rgba(14, 11, 22, 0.90);
+  --glass-border: rgba(168, 85, 247, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.12);
+
+  /* Responsive Seat Sizing & Grid Tokens */
+  --seat-size: 34px;
+  --seat-gap: 3px;
+  --seat-font-size: 11px;
+  --seat-radius: 6px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Responsive Adaptive Seat Size Breakpoints */
+@media (max-width: 767.98px) {
+  :root {
+    --seat-size: 30px;
+    --seat-gap: 2.5px;
+    --seat-font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --seat-size: 26px;
+    --seat-gap: 2px;
+    --seat-font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --seat-size: 22px;
+    --seat-gap: 1.5px;
+    --seat-font-size: 8px;
+  }
+}

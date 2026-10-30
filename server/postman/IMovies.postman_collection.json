@@ -1,0 +1,189 @@
+{
+  "info": {
+    "_postman_id": "imovies-api-collection-v1",
+    "name": "IMovies API",
+    "description": "Postman API Collection for IMovies — Movie ticket booking made simple.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"Password123!\",\n  \"phone\": \"9876543210\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/auth/register", "host": ["{{baseUrl}}"], "path": ["api", "auth", "register"] }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"Password123!\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] }
+          }
+        },
+        {
+          "name": "Get Current User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/auth/me", "host": ["{{baseUrl}}"], "path": ["api", "auth", "me"] }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/auth/logout", "host": ["{{baseUrl}}"], "path": ["api", "auth", "logout"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Public",
+      "item": [
+        {
+          "name": "Get Movies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/public/movies?status=NOW_SHOWING", "host": ["{{baseUrl}}"], "path": ["api", "public", "movies"], "query": [{ "key": "status", "value": "NOW_SHOWING" }] }
+          }
+        },
+        {
+          "name": "Get Movie By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/public/movies/{{movieId}}", "host": ["{{baseUrl}}"], "path": ["api", "public", "movies", "{{movieId}}"] }
+          }
+        },
+        {
+          "name": "Get Movie Shows",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/public/movies/{{movieId}}/shows?city=Mumbai&date=2026-10-19", "host": ["{{baseUrl}}"], "path": ["api", "public", "movies", "{{movieId}}", "shows"], "query": [{ "key": "city", "value": "Mumbai" }, { "key": "date", "value": "2026-10-19" }] }
+          }
+        },
+        {
+          "name": "Get Show Seats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/public/shows/{{showId}}/seats", "host": ["{{baseUrl}}"], "path": ["api", "public", "shows", "{{showId}}", "seats"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Bookings",
+      "item": [
+        {
+          "name": "Hold Seats",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"showId\": \"{{showId}}\",\n  \"seatLabels\": [\"A1\", \"A2\"],\n  \"couponCode\": \"WELCOME50\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/user/bookings/hold", "host": ["{{baseUrl}}"], "path": ["api", "user", "bookings", "hold"] }
+          }
+        },
+        {
+          "name": "Release Hold",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/user/bookings/{{bookingId}}/release", "host": ["{{baseUrl}}"], "path": ["api", "user", "bookings", "{{bookingId}}", "release"] }
+          }
+        },
+        {
+          "name": "Get My Bookings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/user/bookings", "host": ["{{baseUrl}}"], "path": ["api", "user", "bookings"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Dashboard Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/admin/dashboard-stats", "host": ["{{baseUrl}}"], "path": ["api", "admin", "dashboard-stats"] }
+          }
+        },
+        {
+          "name": "Verify Ticket",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bookingCode\": \"IMV-X9K2P1\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/api/admin/bookings/verify", "host": ["{{baseUrl}}"], "path": ["api", "admin", "bookings", "verify"] }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "movieId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "showId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "bookingId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
